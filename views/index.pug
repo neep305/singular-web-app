@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div
+    section.text-center
+      img.img_fluid(src="./images/singular-labs.png" alt="singular logo" width="70%" height="70%")
+    section.d-flex.justify-content-center
+      button.btn.btn-outline-primary
+        | 앱으로 이동
+block append-script
+  script.
+    $(() => {
+      jqueryDatepicker($);
+      $('#date').datepicker({ dateFormat: 'yy-mm-dd' });
+      $("#blockBtn").on('click', () => {
+        $.blockUI();
+        setTimeout(()=> {$.unblockUI();}, 2000);
+      });
+    });

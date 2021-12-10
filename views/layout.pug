@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    title= title
+    link(href='/static/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    link(href='/static/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+    link(href='/static/')
+  body.vh-100.m-0.d-flex.flex-column
+    header 
+      .navbar.navbar-dark.bg-primary.shadow-sm
+        .container
+          a.navbar-brand.d-flex.align-items-center(href='/')
+            //- svg.mr-2(xmlns='http://www.w3.org/2000/svg', width='20', height='20', fill='none', stroke='currentColor', stroke-linecap='round', stroke-linejoin='round', stroke-width='2', aria-hidden='true', viewBox='0 0 24 24', focusable='false')
+              path(d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z')
+              circle(cx='12', cy='13', r='4')
+            i.fas.fa-ad
+            strong.ml-1 Singular Web-to-App
+    //div.d-flex.justify-content-center.align-items-center
+    div.container-fluid.flex-fill.d-flex.justify-content-center.align-items-center
+      block content
+    footer.footer.py-3.bg-primary.mt-auto
+      .container
+        a.text-white.float-right(href='#') Back to top
+        p.m-0.text-center.text-white Copyright © Jason Nam 2021
+    script(src='/static/jquery/dist/jquery.min.js')
+    script(src='/static/bootstrap/dist/js/bootstrap.bundle.min.js', integrity='sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o', crossorigin='anonymous')
+    script(src='/static/bootstrap/js/dist/util.js')
+    script(src='/static/axios/dist/axios.js')
+    script(src='https://kit.fontawesome.com/b79cbf5f50.js', crossorigin="anonymous")
+    block append-script
