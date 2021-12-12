@@ -5,15 +5,17 @@ block content
     section.text-center
       img.img_fluid(src="./images/singular-labs.png" alt="singular logo" width="70%" height="70%")
     section.d-flex.justify-content-center
-      button.btn.btn-outline-primary
+      button.btn.btn-outline-primary#btnWebToApp
         | 앱으로 이동
 block append-script
   script.
     $(() => {
-      jqueryDatepicker($);
-      $('#date').datepicker({ dateFormat: 'yy-mm-dd' });
-      $("#blockBtn").on('click', () => {
-        $.blockUI();
-        setTimeout(()=> {$.unblockUI();}, 2000);
+      console.log('before initSingularSdk');
+      initSingularSdk();
+      console.log('after initSingularSdk');
+
+      $('#btnWebToApp').on('click', (e) => {
+        e.preventDefault();
+        openApp();
       });
     });
