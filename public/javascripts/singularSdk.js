@@ -9,7 +9,12 @@ const initSingularSdk = () => {
 }
 
 const openApp = () => {
-    console.log('executed openApp()');
     // https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp
     singularSdk.openApp("https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp", "jasonapp://", "passthrough_test", "jasonapp://");
+}
+
+const buildWebToApp = () => {
+    console.log("buildWebToAppLink");
+    const link = singularSdk.buildWebToAppLink("https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp", "jasonapp://", "passthrough_test", "jasonapp://");
+    console.log(link);
 }
