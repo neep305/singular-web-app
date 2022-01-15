@@ -20,9 +20,11 @@ block append-script
       $('#btnWebToApp').on('click', (e) => {
         e.preventDefault();
         openApp();
+        e.target.blur();
       });
       $('#btnBuildWebToApp').on('click', (e) => {
         e.preventDefault();
         buildWebToAppLink();
+        e.target.blur();
       });
     });
