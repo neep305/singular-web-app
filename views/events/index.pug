@@ -2,14 +2,14 @@ extends ../layout_default
 
 block content 
     
-    h2.form-label 
+    h3.badge.rounded-pill.bg-dark.mt-1.text-light
             | GTM Events
     row 
         button.btn.btn-primary#eventRegisterBtn.mb-3
             | Register Event
     row
-        button.btn.btn-primary#eventRevenueBtn.mb-3
-            | Revenue Event
+        button.btn.btn-danger#eventAddToCartBtn.mb-3
+            | Add To Cart Event
     row    
-        button.btn.btn-primary#eventCustomRevenueBtn
-            | Custom Revenue Event
+        button.btn.btn-info#eventCustomRevenueBtn
+            | Revenue Event
