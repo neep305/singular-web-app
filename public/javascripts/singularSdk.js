@@ -19,11 +19,11 @@ const sendRevenue = (eventName, currency, amount, args) => {
 
 const openApp = () => {
     // https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp
-    singularSdk.openApp("https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp&utm_source=slack&utm_medium=email&utm_campaign=slacktest", "jasonapp://", "passthrough_test", "jasonapp://");
+    singularSdk.openApp("https://jared.sng.link/Asyhj/eh31", "deeplink_value", "passthrough_test", "ddl_value");
 }
 
 const buildWebToAppLink = () => {
     console.log("buildWebToAppLink");
-    const link = singularSdk.buildWebToAppLink("https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp", "jasonapp://", "passthrough_test", "jasonapp://");
+    const link = singularSdk.buildWebToAppLink("https://jared.sng.link/Asyhj/eh31", "deeplink_value", "passthrough_value", "ddl_value");
     console.log(link);
 }
