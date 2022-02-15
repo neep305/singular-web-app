@@ -1,4 +1,5 @@
 'use strict';
+//const {  } = require('../../node_modules/singular-sdk/dist/singular-sdk');
 
 const initSingularSdk = () => {
     const apiKey="jaredinternaltestaccount_5c7f106a";
@@ -6,6 +7,10 @@ const initSingularSdk = () => {
     const productId="com.herokuapp.singular-web-app";
     const config = new SingularConfig(apiKey, secretKey, productId);
     singularSdk.init(config);
+}
+
+const sendEvent = () => {
+    singularSdk.event('Add to cart', {productId: "12345"});
 }
 
 const openApp = () => {
