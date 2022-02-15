@@ -5,6 +5,11 @@ block content
     section.text-center
       img.img_fluid(src="./images/singular-labs.png" alt="singular logo" width="70%" height="70%")
     section.d-flex.justify-content-center
+      | SDID
+    section.d-flex.justify-content-center
+      span.form-text#sdidArea
+        | No SDID
+    section.d-flex.justify-content-center.mt-1
       button.btn.btn-outline-primary#btnWebEvent
         | Web Add to Cart 이벤트
     section.d-flex.justify-content-center.mt-1
@@ -19,7 +24,8 @@ block append-script
       console.log('before initSingularSdk');
       initSingularSdk();
       console.log('after initSingularSdk');
-
+      console.log('SDID: ' + singularSdk.getSingularDeviceId());
+      $('#sdidArea').text(singularSdk.getSingularDeviceId());
       // Web Add to cart event
       $('#btnWebEvent').on('click', (e) => {
         e.preventDefault();

@@ -9,8 +9,8 @@ const initSingularSdk = () => {
     singularSdk.init(config);
 }
 
-const sendEvent = () => {
-    singularSdk.event('Add to cart', {productId: "12345"});
+const sendEvent = (eventName, args) => {
+    singularSdk.event(eventName, args);
 }
 
 const openApp = () => {
