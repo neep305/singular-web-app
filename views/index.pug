@@ -10,8 +10,18 @@ block content
       span.form-text#sdidArea
         | No SDID
     section.d-flex.justify-content-center.mt-1
-      button.btn.btn-outline-primary#btnWebEvent
+      | Custom User ID        
+    section.d-flex.justify-content-center.mt-1
+      input.form-control#customUserIdField(type="text" placeholder="customUserId" aria-label="customUserId")
+    section.d-flex.justify-content-center.mt-1
+      button.btn.btn-outline-primary#btnLoginEvent
+        | Web Login 이벤트
+    section.d-flex.justify-content-center.mt-1
+      button.btn.btn-outline-primary#btnAddtoCartEvent
         | Web Add to Cart 이벤트
+    section.d-flex.justify-content-center.mt-1
+      button.btn.btn-outline-primary#btnPurchaseItemEvent
+        | Web Purchase 이벤트
     section.d-flex.justify-content-center.mt-1
       button.btn.btn-outline-primary#btnWebToApp
         | 앱으로 이동
@@ -26,10 +36,26 @@ block append-script
       console.log('after initSingularSdk');
       console.log('SDID: ' + singularSdk.getSingularDeviceId());
       $('#sdidArea').text(singularSdk.getSingularDeviceId());
-      // Web Add to cart event
-      $('#btnWebEvent').on('click', (e) => {
+      $('#customUserIdField').val('973157');
+      
+      // Web Login Event
+      $('#btnLoginEvent').on('click', (e) => {
         e.preventDefault();
-        sendEvent('Add to Cart', {productId: '12345'});
+        const currentCustomUserId = $('#customUserIdField').val();
+        console.log('currentCustomUserId: ' + currentCustomUserId);
+        if (currentCustomUserId != undefined) {
+          singularSdk.setDeviceCustomUserId(currentCustomUserId);
+        }  
+      });
+      // Web Add to cart Event
+      $('#btnAddtoCartEvent').on('click', (e) => {
+        e.preventDefault();
+        sendEvent('Add_to_Cart', {productId: '12345'});
+      });
+      // Web Purchase Event
+      $('#btnPurchaseItemEvent').on('click', (e) => {
+        e.preventDefault();
+        sendRevenue('Purchase', "KRW", 15000, {productId: '12345'});
       });
 
       $('#btnWebToApp').on('click', (e) => {
