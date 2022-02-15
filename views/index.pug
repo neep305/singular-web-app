@@ -28,6 +28,8 @@ block content
     section.d-flex.justify-content-center.mt-1
       button.btn.btn-outline-primary#btnBuildWebToApp
         | Build Web-to-App
+    section.d-flex.justify-content-center.mt-1
+      input.form-control#webtoappArea(type="url" placeholder="url")
 block append-script
   script.
     $(() => {
@@ -65,7 +67,8 @@ block append-script
       });
       $('#btnBuildWebToApp').on('click', (e) => {
         e.preventDefault();
-        buildWebToAppLink();
+        const link = buildWebToAppLink();
+        $('#webtoappArea').val(link);
         e.target.blur();
       });
     });

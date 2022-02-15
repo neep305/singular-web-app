@@ -26,4 +26,5 @@ const buildWebToAppLink = () => {
     console.log("buildWebToAppLink");
     const link = singularSdk.buildWebToAppLink("https://jared.sng.link/Asyhj/eh31", "jasonapp://dl", "passthrough_value", "jasonapp://ddl");
     console.log(link);
+    return link;
 }
