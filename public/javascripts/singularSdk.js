@@ -19,11 +19,11 @@ const sendRevenue = (eventName, currency, amount, args) => {
 
 const openApp = () => {
     // https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp
-    singularSdk.openApp("https://jared.sng.link/Asyhj/eh31", "deeplink_value", "passthrough_test", "ddl_value");
+    singularSdk.openApp("https://jared.sng.link/Asyhj/eh31", "jasonapp://dl", "passthrough_value", "jasonapp://ddl");
 }
 
 const buildWebToAppLink = () => {
     console.log("buildWebToAppLink");
-    const link = singularSdk.buildWebToAppLink("https://jared.sng.link/Asyhj/eh31", "deeplink_value", "passthrough_value", "ddl_value");
+    const link = singularSdk.buildWebToAppLink("https://jared.sng.link/Asyhj/eh31", "jasonapp://dl", "passthrough_value", "jasonapp://ddl");
     console.log(link);
 }
