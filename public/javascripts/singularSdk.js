@@ -19,7 +19,7 @@ const sendRevenue = (eventName, currency, amount, args) => {
 
 const openApp = () => {
     // https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp
-    singularSdk.openApp("https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp", "", "", "");
+    singularSdk.openApp("https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp");
 }
 
 const buildWebToAppLink = () => {
