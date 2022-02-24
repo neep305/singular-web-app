@@ -23,7 +23,7 @@ const openApp = () => {
 }
 
 const openAppWithParams = (params) => {
-    let baselink = "https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp";
+    let baselink = "https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp&_forward_params=true";
     if (params != undefined || params != '') {
         if (params.startsWith('?')) {
             baselink = baselink.concat('&').concat(params.substring(1));
