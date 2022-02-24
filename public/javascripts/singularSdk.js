@@ -28,7 +28,10 @@ const openAppWithParams = (params) => {
         if (params.startsWith('?')) {
             baselink = baselink.concat('&').concat(params.substring(1));
             console.log('baselink: ' + baselink);
+            singularSdk.openApp(baselink, null, params.substring(1), null);
         }        
+        
+        return;
     }
     singularSdk.openApp(baselink);
 }
@@ -48,7 +51,7 @@ const buildWebToAppLinkWithParams = (params) => {
             baselink = baselink.concat('&').concat(params);
         }
     }
-    const link = singularSdk.buildWebToAppLink(baselink);
+    const link = singularSdk.buildWebToAppLink(baselink, null, params.substring(1), null);
     console.log(link);
     return link;
 }

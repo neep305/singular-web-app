@@ -71,8 +71,8 @@ block append-script
       $('#btnBuildWebToApp').on('click', (e) => {
         e.preventDefault();
         const utmParams = $(document)[0].location.search;
-        const link = buildWebToAppLink();
-        //const link = buildWebToAppLinkWithParams(utmParams);
+        //const link = buildWebToAppLink();
+        const link = buildWebToAppLinkWithParams(utmParams);
         $('#webtoappArea').val(link);
         e.target.blur();
       });
