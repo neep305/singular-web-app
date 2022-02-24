@@ -22,9 +22,33 @@ const openApp = () => {
     singularSdk.openApp("https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp");
 }
 
+const openAppWithParams = (params) => {
+    let baselink = "https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp";
+    if (params != undefined || params != '') {
+        if (params.startsWith('?')) {
+            baselink = baselink.concat('&').concat(params.substring(1));
+            console.log('baselink: ' + baselink);
+        }        
+    }
+    singularSdk.openApp(baselink);
+}
+
 const buildWebToAppLink = () => {
     console.log("buildWebToAppLink");
-    const link = singularSdk.buildWebToAppLink("https://se.sng.link/Dsyhj/zzku", "jasonapp://dl", "passthrough_value", "jasonapp://ddl");
+    const link = singularSdk.buildWebToAppLink("https://jared.sng.link/Asyhj/eh31", "jasonapp://dl", "passthrough_value", "jasonapp://ddl");
+    console.log(link);
+    return link;
+}
+
+const buildWebToAppLinkWithParams = (params) => {
+    console.log("buildWebToAppLinkWithParams params: " + params);
+    let baselink = "https://jared.sng.link/Asyhj/eh31?_ios_dl=jasonapp%3A%2F%2F&_android_dl=jasonapp&_forward_params=true";
+    if (params != undefined || params != '') {
+        if (params.startsWith('?')) {
+            baselink = baselink.concat('&').concat(params);
+        }
+    }
+    const link = singularSdk.buildWebToAppLink(baselink);
     console.log(link);
     return link;
 }
