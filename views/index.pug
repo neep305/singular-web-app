@@ -64,8 +64,8 @@ block append-script
       $('#btnWebToApp').on('click', (e) => {
         e.preventDefault();
         const utmParams = $(document)[0].location.search;
-        openApp();
-        //openAppWithParams(utmParams);
+        //openApp();
+        openAppWithParams(utmParams);
         e.target.blur();
       });
       $('#btnBuildWebToApp').on('click', (e) => {
