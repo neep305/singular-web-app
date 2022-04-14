@@ -11,9 +11,13 @@ block content
       span.form-text#sdidArea
         | No SDID
     section.d-flex.justify-content-center.mt-1
-      | Custom User ID        
+      p.font-weight-bold
+        | Custom User ID        
+    section.d-flex.justify-content-center.mt-1.p-1
+      input.form-control#customUserIdField(type="text" placeholder="Custom User ID" aria-label="customUserId")
     section.d-flex.justify-content-center.mt-1
-      input.form-control#customUserIdField(type="text" placeholder="customUserId" aria-label="customUserId")
+      p.font-weight-bold
+        | Events for the test
     section.d-flex.justify-content-center.mt-1
       button.btn.btn-outline-primary#btnLoginEvent
         | Web Login Event
@@ -29,8 +33,8 @@ block content
     section.d-flex.justify-content-center.mt-1
       button.btn.btn-outline-primary#btnBuildWebToApp
         | Build Web-to-App
-    section.d-flex.justify-content-center.mt-1
-      input.form-control#webtoappArea(type="url" placeholder="url")
+    section.d-flex.justify-content-center.mt-1.p-1
+      input.form-control#webtoappArea(type="url" placeholder="Web-to-App URL")
 block append-script
   script.
     $(() => {
@@ -39,7 +43,7 @@ block append-script
       console.log('after initSingularSdk');
       console.log('SDID: ' + singularSdk.getSingularDeviceId());
       $('#sdidArea').text(singularSdk.getSingularDeviceId());
-      $('#customUserIdField').val('973157');
+      //$('#customUserIdField').val('973157');
       
       // Web Login Event
       $('#btnLoginEvent').on('click', (e) => {

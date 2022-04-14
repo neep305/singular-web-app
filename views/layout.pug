@@ -8,6 +8,7 @@ html
     link(href='/static/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
     link(href='/static/font-awesome/css/font-awesome.min.css', rel='stylesheet')
     link(href='/static/')
+    link(rel='icon' href='https://sup.singular.net/favicon.ico')
     // Google Tag Manager
     script.
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -30,8 +31,9 @@ html
               circle(cx='12', cy='13', r='4')
             i.fas.fa-ad
             strong.ml-1 Singular Web-to-App
-    //div.d-flex.justify-content-center.align-items-center
-    div.container-fluid.flex-fill.d-flex
+    div.d-flex.justify-content-center.align-items-center
+      block content
+    //div.container-fluid.flex-fill.d-flex
       block content
     footer.footer.py-3.bg-primary.mt-auto
       .container
