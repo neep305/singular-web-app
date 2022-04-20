@@ -1,0 +1,13 @@
+extends ../layout_default 
+
+block content 
+    main.vh-100.d-flex.flex-column(role="main")
+        div(style="margin:auto;")
+            section.text-center
+                img.img_fluid(src="./images/singular-labs.png" alt="singular logo" width="70%" height="70%")
+            section.d-flex.flex-column.p-2
+                button.btn.btn-primary#btnMoveToApp
+                    | 모바일 앱으로 이동
+                button.btn.btn-info.mt-3#btnMoveToWeb 
+                    | 모바일 웹으로 이동
+    
